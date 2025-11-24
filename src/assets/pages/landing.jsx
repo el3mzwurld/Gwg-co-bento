@@ -5,11 +5,19 @@ import { FaSearch, FaRegUser, FaArrowRight } from "react-icons/fa";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { MdFavoriteBorder } from "react-icons/md";
 import Tile from "../components/tile";
-import TileShoes from "../components/tile2";
+import ProductCard from "../components/tile2";
 import test from "../images/soccerkit_aes 1.png";
 import snoop from "../images/snoop_manU.jpeg";
 import outdoor from "../images/outdoor.png";
 import total_ninety from "../images/toal90_aes.jpeg";
+import Category from "../components/category";
+
+import forces from "../images/shoes/air_forces.jpg";
+import jordan from "../images/shoes/air_jrdn.jpg";
+import alteAir from "../images/shoes/custom_air.jpg";
+import scareAir from "../images/shoes/nike_halloween.jpg";
+import samba from "../images/shoes/samba.jpg";
+import dunks from "../images/shoes/dunks.jpg";
 function Gwg() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
@@ -29,7 +37,7 @@ function Gwg() {
   };
   const scrollRight = () => {
     scrollRef.current.scrollBy({
-      left: 295,
+      left: 320,
       behavior: "smooth",
     });
   };
@@ -200,9 +208,58 @@ function Gwg() {
         </section>
         <div className="trending">
           <div className="title">
-            <p className="txt"></p>
+            <p className="txt">Trending</p>
+            <div className="filters">
+              <Category name="shoes" />
+              <Category name="hats" />
+              <Category name="shorts" />
+              <Category name="jackets" />
+            </div>
+          </div>
 
-            <div className="filters"></div>
+          <div className="products-grid">
+            <ProductCard
+              elemName="grid-one"
+              preview_img={forces}
+              productName="Air Forces"
+              price="44.00"
+              windowWidth={windowWidth}
+            />
+            <ProductCard
+              elemName="grid-two"
+              preview_img={samba}
+              productName="Adidas Sambas"
+              price="30.99"
+              windowWidth={windowWidth}
+            />
+            <ProductCard
+              elemName="grid-three"
+              preview_img={scareAir}
+              productName="Custom : ALTEWRLD Nike Air Force SCAR3"
+              price="120.00"
+              windowWidth={windowWidth}
+            />
+            <ProductCard
+              elemName="grid-four"
+              preview_img={jordan}
+              productName="Air Jordan"
+              price="45.99"
+              windowWidth={windowWidth}
+            />
+            <ProductCard
+              elemName="grid-five"
+              preview_img={dunks}
+              productName="Air Jordan : Travis"
+              price="90.00"
+              windowWidth={windowWidth}
+            />
+            <ProductCard
+              elemName="grid-six"
+              preview_img={alteAir}
+              productName="Custom : ALTEWRLD AIR ELECTRIC"
+              price="200.00"
+              windowWidth={windowWidth}
+            />
           </div>
         </div>
       </main>

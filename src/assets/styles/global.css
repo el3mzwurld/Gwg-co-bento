@@ -258,14 +258,16 @@ body {
       height: 100vh;
       overflow: hidden;
       overflow-y: auto;
-
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
       .hero {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-bottom: 1px solid var(--gray);
+        /* border-bottom: 1px solid var(--gray); */
         .hero-cats {
           width: 100%;
           height: auto;
@@ -683,6 +685,175 @@ body {
                   background-color: white;
                 }
               }
+            }
+          }
+        }
+      }
+      .trending {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          .txt {
+            width: auto;
+            height: auto;
+            font-size: 25px;
+            padding: 0px 0px;
+            padding-left: 10px;
+          }
+          .filters {
+            width: 100%;
+            height: 55px;
+            padding: 2.5px 0px;
+            padding-left: 10px;
+            padding-right: 5px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0px;
+            overflow: hidden;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            .category-card {
+              width: auto;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              padding: 0px 20px;
+              border: 0.8px solid var(--gray);
+              border-radius: 100px;
+              flex: 0 0 auto;
+              transition: all ease 0.4s;
+              &:hover {
+                background: black;
+                color: white;
+                font-weight: 600;
+              }
+            }
+            .clicked {
+              background: black;
+              color: white;
+              font-weight: 600;
+            }
+          }
+        }
+        .products-grid {
+          width: 100%;
+          min-height: 900px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(6, 200px);
+          padding: 20px 10px;
+          align-items: center;
+          column-gap: 5px;
+          row-gap: 10px;
+
+          .tile-container {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .preview {
+              width: 100%;
+              height: 70%;
+              border: none;
+              overflow: hidden;
+              border-radius: 24px;
+              z-index: 0;
+              position: relative;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 24px;
+                z-index: -1;
+              }
+              .preview-ico {
+                width: 40px;
+                height: 40px;
+                background: var(--gray);
+                z-index: 0;
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 30px;
+              }
+              .clicked {
+                background: rgb(198, 56, 79);
+              }
+            }
+            .details {
+              flex: 1;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 10px 5px;
+              gap: 10px;
+              .name {
+                font-size: 14px;
+                font-weight: 600;
+                color: gray;
+              }
+              .price {
+                color: black;
+                font-weight: 500;
+                font-size: 14px;
+              }
+            }
+          }
+          #grid-one {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+          }
+          #grid-two {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+          }
+          #grid-three {
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 2;
+            .preview {
+              background: wheat;
+              width: 100%;
+              height: 80%;
+            }
+          }
+          #grid-four {
+            grid-column: 1 / span 1;
+            grid-row: 4 / span 1;
+          }
+          #grid-five {
+            grid-column: 2 / span 1;
+            grid-row: 4 / span 1;
+          }
+          #grid-six {
+            grid-column: 1 / span 2;
+            grid-row: 5 / span 2;
+            .preview {
+              background: wheat;
+              width: 100%;
+              height: 80%;
             }
           }
         }

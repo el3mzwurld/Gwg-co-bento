@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 
-export default function TileShoes({
+export default function ProductCard({
   windowWidth,
   setWindowWidth,
   preview_img = "",
@@ -23,7 +23,7 @@ export default function TileShoes({
 
       <div className="details">
         <p className="name">{productName}</p>
-        <p className="price">{price}</p>
+        <p className="price">${price}</p>
       </div>
     </div>
   );
