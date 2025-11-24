@@ -37,7 +37,7 @@ function Gwg() {
   };
   const scrollRight = () => {
     scrollRef.current.scrollBy({
-      left: 320,
+      left: 400,
       behavior: "smooth",
     });
   };
