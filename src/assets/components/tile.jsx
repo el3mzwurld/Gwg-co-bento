@@ -8,6 +8,7 @@ const Tile = ({
   button = false,
   link = false,
   color = "white",
+  windowWidth,
 }) => {
   return (
     <div id={elemName} className="tile">
@@ -22,7 +23,16 @@ const Tile = ({
 
       {link ? (
         <span className="link">
-          <FiArrowUpRight size={20} color={color}></FiArrowUpRight>
+          {windowWidth < 520 && (
+            <FiArrowUpRight size={20} color={color}></FiArrowUpRight>
+          )}
+          {windowWidth >= 768 && (
+            <FiArrowUpRight
+              size={28}
+              color={color}
+              fontWeight={800}
+            ></FiArrowUpRight>
+          )}
         </span>
       ) : null}
     </div>

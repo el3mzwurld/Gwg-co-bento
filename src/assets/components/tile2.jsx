@@ -14,7 +14,10 @@ export default function ProductCard({
   return (
     <div className="tile-container" id={elemName}>
       <div className="preview">
-        <span className="preview-ico">
+        <span
+          className={`preview-ico ${fav ? "active" : ""}`}
+          onClick={() => setFav(!fav)}
+        >
           {windowWidth < 768 && <MdFavoriteBorder size={25} color="white" />}
           {windowWidth > 767 && <MdFavoriteBorder size={30} color="white" />}
         </span>
@@ -28,3 +31,6 @@ export default function ProductCard({
     </div>
   );
 }
+
+// className={`preview-ico ${fav ? "active" : ""}`}
+//         onClick={setFav(!fav)}
