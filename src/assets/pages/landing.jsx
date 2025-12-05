@@ -32,7 +32,9 @@ function Gwg() {
   const [open, setOpen] = useState(false);
   const [isDropDown, setDropDown] = useState(false);
   const [userLang, setUserLang] = useState("");
+  const [scroll, setScroll] = useState(false);
   const scrollRef = useRef(null);
+  const mainRef = useRef(null);
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
 
@@ -45,6 +47,18 @@ function Gwg() {
       setUserLang(navigator.language);
     }
   }, []);
+  useEffect(() => {
+    const main = mainRef.current;
+
+    const handleScroll = () => {
+      setScroll(main.scrollTop > 100);
+    };
+
+    main.addEventListener("scroll", handleScroll);
+
+    return () => main.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleMobMenu = () => {
     setOpen((prev) => !prev);
   };
@@ -62,7 +76,7 @@ function Gwg() {
   };
   return (
     <div className="landing">
-      <header>
+      <header className={`${scroll ? "scroll" : ""}`}>
         <>
           {" "}
           {windowWidth > 767 && (
@@ -277,7 +291,7 @@ function Gwg() {
         </nav>
       </header>
 
-      <main>
+      <main ref={mainRef}>
         <section className="hero">
           <div className="hero-cats">
             <div className="main">

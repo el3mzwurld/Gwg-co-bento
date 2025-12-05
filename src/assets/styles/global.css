@@ -286,6 +286,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
+              transition: 0.5s ease;
             }
 
             img {
@@ -2963,6 +2964,7 @@ body {
       display: flex;
       flex-direction: column;
       align-self: center;
+      transition: 0.5s ease;
       .header-data {
         width: 100%;
         display: flex;
@@ -2980,8 +2982,9 @@ body {
         }
         .data-links {
           display: flex;
-          width: auto;
+          width: 40%;
           gap: 20px;
+          justify-content: space-between;
 
           .link {
             a {
@@ -3001,7 +3004,7 @@ body {
         padding: 10px 10px;
         gap: 10px;
         .header-main {
-          width: 20%;
+          width: 10%;
           height: auto;
           padding: 10px 0;
           display: flex;
@@ -3020,13 +3023,6 @@ body {
             span {
               color: rgb(53, 77, 53);
             }
-          }
-          .hamburger {
-            width: 30px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
           }
         }
         .header-nav {
@@ -3056,6 +3052,7 @@ body {
               span {
                 position: absolute;
                 right: 10px;
+                cursor: pointer;
               }
             }
             .controls {
@@ -3069,13 +3066,14 @@ body {
                 align-items: center;
                 justify-content: space-evenly;
                 gap: 10px;
-                width: 70%;
+                width: 80%;
                 li {
                   list-style: none;
                   font-size: 15px;
                   display: flex;
                   align-items: center;
                   position: relative;
+                  cursor: pointer;
 
                   #dropdown--list {
                     bottom: -120px;
@@ -3094,6 +3092,7 @@ body {
                     li {
                       color: white;
                       width: 100%;
+                      cursor: pointer;
                     }
                   }
                 }
@@ -3103,7 +3102,9 @@ body {
                 align-items: center;
                 flex: 1;
                 justify-content: center;
+                width: 10%;
                 li {
+                  cursor: pointer;
                   list-style: none;
                   padding: 0px 10px;
                   flex: 1;
@@ -3117,6 +3118,9 @@ body {
           }
         }
       }
+    }
+    .scroll {
+      animation: scrollUp 0.5s ease forwards;
     }
 
     main {
@@ -3321,6 +3325,9 @@ body {
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  transition: 0.3s ease-in-out;
+                  &:hover {
+                  }
                 }
               }
 
@@ -3426,15 +3433,17 @@ body {
         display: flex;
         flex-direction: column;
         padding: 0px 10px;
+        margin: 25px 0px;
         .title {
           display: flex;
-          flex-direction: column;
           gap: 20px;
+          justify-content: space-between;
+          padding-right: 30px;
           .txt {
             font-size: 45px;
           }
           .filters {
-            width: 100%;
+            width: auto;
             display: flex;
             height: auto;
             padding: 10px 10px;
@@ -3460,9 +3469,9 @@ body {
         .products-grid {
           display: grid;
           width: 100%;
-          min-height: 700px;
-          grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(3, 1fr);
+          min-height: 900px;
+          grid-template-columns: 322px, 322px, 322px, 322px;
+          grid-template-rows: 450px, 450px, 450px;
           row-gap: 5px;
           column-gap: 10px;
           padding: 20px 0px;
@@ -3474,7 +3483,7 @@ body {
             flex-direction: column;
             .preview {
               width: 100%;
-              height: 70%;
+              height: 80%;
               border-radius: 25px;
               position: relative;
               overflow: hidden;
@@ -3811,5 +3820,14 @@ body {
   100% {
     right: 0;
     width: 100%;
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+  }
+  100% {
+    background: black;
+    color: white;
   }
 }
